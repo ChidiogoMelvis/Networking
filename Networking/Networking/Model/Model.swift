@@ -9,10 +9,10 @@ import Foundation
 
 // MARK: - Welcome
 class Welcome: Codable {
-    let results: [Result]
+    let results: [Results]
     let info: Info
-
-    init(results: [Result], info: Info) {
+    
+    init(results: [Results], info: Info) {
         self.results = results
         self.info = info
     }
@@ -23,7 +23,7 @@ class Info: Codable {
     let seed: String
     let results, page: Int
     let version: String
-
+    
     init(seed: String, results: Int, page: Int, version: String) {
         self.seed = seed
         self.results = results
@@ -33,7 +33,7 @@ class Info: Codable {
 }
 
 // MARK: - Result
-class Result: Codable {
+class Results: Codable {
     let gender: String
     let name: Name
     let location: Location
@@ -44,7 +44,7 @@ class Result: Codable {
     let id: ID
     let picture: Picture
     let nat: String
-
+    
     init(gender: String, name: Name, location: Location, email: String, login: Login, dob: Dob, registered: Dob, phone: String, cell: String, id: ID, picture: Picture, nat: String) {
         self.gender = gender
         self.name = name
@@ -65,7 +65,7 @@ class Result: Codable {
 class Dob: Codable {
     let date: String
     let age: Int
-
+    
     init(date: String, age: Int) {
         self.date = date
         self.age = age
@@ -75,7 +75,7 @@ class Dob: Codable {
 // MARK: - ID
 class ID: Codable {
     let name, value: String
-
+    
     init(name: String, value: String) {
         self.name = name
         self.value = value
@@ -89,7 +89,7 @@ class Location: Codable {
     let postcode: Int
     let coordinates: Coordinates
     let timezone: Timezone
-
+    
     init(street: Street, city: String, state: String, country: String, postcode: Int, coordinates: Coordinates, timezone: Timezone) {
         self.street = street
         self.city = city
@@ -104,7 +104,7 @@ class Location: Codable {
 // MARK: - Coordinates
 class Coordinates: Codable {
     let latitude, longitude: String
-
+    
     init(latitude: String, longitude: String) {
         self.latitude = latitude
         self.longitude = longitude
@@ -115,7 +115,7 @@ class Coordinates: Codable {
 class Street: Codable {
     let number: Int
     let name: String
-
+    
     init(number: Int, name: String) {
         self.number = number
         self.name = name
@@ -125,7 +125,7 @@ class Street: Codable {
 // MARK: - Timezone
 class Timezone: Codable {
     let offset, description: String
-
+    
     init(offset: String, description: String) {
         self.offset = offset
         self.description = description
@@ -136,7 +136,7 @@ class Timezone: Codable {
 class Login: Codable {
     let uuid, username, password, salt: String
     let md5, sha1, sha256: String
-
+    
     init(uuid: String, username: String, password: String, salt: String, md5: String, sha1: String, sha256: String) {
         self.uuid = uuid
         self.username = username
@@ -151,7 +151,7 @@ class Login: Codable {
 // MARK: - Name
 class Name: Codable {
     let title, first, last: String
-
+    
     init(title: String, first: String, last: String) {
         self.title = title
         self.first = first
@@ -162,7 +162,7 @@ class Name: Codable {
 // MARK: - Picture
 class Picture: Codable {
     let large, medium, thumbnail: String
-
+    
     init(large: String, medium: String, thumbnail: String) {
         self.large = large
         self.medium = medium
