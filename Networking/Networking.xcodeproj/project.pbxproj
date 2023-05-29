@@ -18,6 +18,7 @@
 		0443E9632A24A62B004C9140 /* NetworkingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443E9622A24A62B004C9140 /* NetworkingUITestsLaunchTests.swift */; };
 		0443E9702A24B225004C9140 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443E96F2A24B225004C9140 /* HomeViewController.swift */; };
 		0443E9722A24B2E8004C9140 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443E9712A24B2E8004C9140 /* HomeTableViewCell.swift */; };
+		0443E9742A24B7E2004C9140 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443E9732A24B7E2004C9140 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		0443E9622A24A62B004C9140 /* NetworkingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0443E96F2A24B225004C9140 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0443E9712A24B2E8004C9140 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		0443E9732A24B7E2004C9140 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				0443E93F2A24A627004C9140 /* AppDelegate.swift */,
 				0443E9412A24A627004C9140 /* SceneDelegate.swift */,
 				0443E9432A24A627004C9140 /* ViewController.swift */,
+				0443E9732A24B7E2004C9140 /* Model.swift */,
 				0443E96F2A24B225004C9140 /* HomeViewController.swift */,
 				0443E9712A24B2E8004C9140 /* HomeTableViewCell.swift */,
 				0443E9452A24A627004C9140 /* Main.storyboard */,
@@ -266,6 +269,7 @@
 			files = (
 				0443E9442A24A627004C9140 /* ViewController.swift in Sources */,
 				0443E9722A24B2E8004C9140 /* HomeTableViewCell.swift in Sources */,
+				0443E9742A24B7E2004C9140 /* Model.swift in Sources */,
 				0443E9402A24A627004C9140 /* AppDelegate.swift in Sources */,
 				0443E9422A24A627004C9140 /* SceneDelegate.swift in Sources */,
 				0443E9702A24B225004C9140 /* HomeViewController.swift in Sources */,
