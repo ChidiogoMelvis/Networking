@@ -9,7 +9,7 @@ import Foundation
 
 class UserViewModel {
     private let networkService = NetworkService()
-    private(set) var users: [Welcome] = []
+    private(set) var users: [Results] = []
     
     func getUsers(completion: @escaping (Error?) -> Void) {
         networkService.getUsers { [weak self] result in
