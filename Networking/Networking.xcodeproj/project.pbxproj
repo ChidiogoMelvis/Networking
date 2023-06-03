@@ -13,8 +13,6 @@
 		0443E9492A24A62A004C9140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0443E9482A24A62A004C9140 /* Assets.xcassets */; };
 		0443E94C2A24A62A004C9140 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0443E94A2A24A62A004C9140 /* LaunchScreen.storyboard */; };
 		0443E9572A24A62A004C9140 /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443E9562A24A62A004C9140 /* NetworkingTests.swift */; };
-		0443E9612A24A62B004C9140 /* NetworkingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443E9602A24A62B004C9140 /* NetworkingUITests.swift */; };
-		0443E9632A24A62B004C9140 /* NetworkingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443E9622A24A62B004C9140 /* NetworkingUITestsLaunchTests.swift */; };
 		0443E9702A24B225004C9140 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443E96F2A24B225004C9140 /* HomeViewController.swift */; };
 		0443E9722A24B2E8004C9140 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443E9712A24B2E8004C9140 /* HomeTableViewCell.swift */; };
 		0443E9742A24B7E2004C9140 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443E9732A24B7E2004C9140 /* Model.swift */; };
@@ -50,8 +48,6 @@
 		0443E9522A24A62A004C9140 /* NetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0443E9562A24A62A004C9140 /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
 		0443E95C2A24A62B004C9140 /* NetworkingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0443E9602A24A62B004C9140 /* NetworkingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingUITests.swift; sourceTree = "<group>"; };
-		0443E9622A24A62B004C9140 /* NetworkingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0443E96F2A24B225004C9140 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0443E9712A24B2E8004C9140 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		0443E9732A24B7E2004C9140 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -89,7 +85,6 @@
 			children = (
 				0443E93E2A24A627004C9140 /* Networking */,
 				0443E9552A24A62A004C9140 /* NetworkingTests */,
-				0443E95F2A24A62B004C9140 /* NetworkingUITests */,
 				0443E93D2A24A627004C9140 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -124,15 +119,6 @@
 				0443E9562A24A62A004C9140 /* NetworkingTests.swift */,
 			);
 			path = NetworkingTests;
-			sourceTree = "<group>";
-		};
-		0443E95F2A24A62B004C9140 /* NetworkingUITests */ = {
-			isa = PBXGroup;
-			children = (
-				0443E9602A24A62B004C9140 /* NetworkingUITests.swift */,
-				0443E9622A24A62B004C9140 /* NetworkingUITestsLaunchTests.swift */,
-			);
-			path = NetworkingUITests;
 			sourceTree = "<group>";
 		};
 		0443E9752A24BB3F004C9140 /* Controllers */ = {
@@ -324,8 +310,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0443E9632A24A62B004C9140 /* NetworkingUITestsLaunchTests.swift in Sources */,
-				0443E9612A24A62B004C9140 /* NetworkingUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
