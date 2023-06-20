@@ -24,7 +24,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         view.backgroundColor = .white
         viewModel.getUsers { [weak self] error in
                     if let error = error {
-                        // Handle error
                         print("Error fetching users: \(error)")
                     } else {
                         DispatchQueue.main.async {
