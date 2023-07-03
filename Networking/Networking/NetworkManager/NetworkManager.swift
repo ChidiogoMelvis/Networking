@@ -7,36 +7,39 @@
 
 import Foundation
 
-enum NetworkError: Error {
-    case invalidURL
-    case emptyResponse
-}
+//enum NetworkError: Error {
+//    case invalidURL
+//    case emptyResponse
+//}
 
 class NetworkService {
     func getUsers(completion: @escaping (Result<[Results], Error>) -> Void) {
         let url = URL(string: "https://randomuser.me/api/?results=5")!
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let error = error {
-                completion(.failure(error))
-                return
+        DispatchQueue.global().async {
+            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+                
+                guard let data = data else { return
+                    //                let error = NSError(domain: "com.example.networking", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data received"])
+                    //                completion(.failure(error))
+                    //                return
+                }
+                
+                do {
+                    let decoder = JSONDecoder()
+                    let welcome = try decoder.decode(Welcome.self, from: data)
+                    let results = welcome.results
+                    completion(.success(results))
+                    print(results.count)
+                } catch {
+                    completion(.failure(error))
+                }
             }
             
-            guard let data = data else {
-                let error = NSError(domain: "com.example.networking", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data received"])
-                completion(.failure(error))
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                let welcome = try decoder.decode(Welcome.self, from: data)
-                let results = welcome.results
-                completion(.success(results))
-            } catch {
-                completion(.failure(error))
-            }
+            task.resume()
         }
-        
-        task.resume()
     }
 }
