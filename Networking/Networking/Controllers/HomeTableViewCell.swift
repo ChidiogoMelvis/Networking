@@ -10,16 +10,71 @@ import UIKit
 class HomeTableViewCell: UITableViewCell {
     
     let identifier = "HomeTableViewCell"
+    
+    lazy var nameLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .black
+        
+        return label
+    }()
+    
+    lazy var emailLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .black
+        
+        return label
+    }()
+    
+    lazy var profileImage: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        
+        return image
+    }()
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    super.init(style: style, reuseIdentifier: reuseIdentifier)
+         setupViews()
 
         // Configure the view for the selected state
     }
-
+    
+    func setupViews() {
+        self.addSubview(nameLabel)
+        self.addSubview(emailLabel)
+        self.addSubview(profileImage)
+        
+//        NSLayoutConstraint.activate([
+//            nameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+//            nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+//
+//            emailLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
+//            emailLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+//
+//            image.topAnchor.
+//        ])
+    }
+    
+        func configure(with user: User) {
+            nameLabel.text = "\(user.name.first) \(user.name.last)"
+            emailLabel.text = user.email
+            
+            // Load the profile image asynchronously
+            if let url = URL(string: user.picture.medium) {
+                DispatchQueue.global().async {
+                    if let imageData = try? Data(contentsOf: url) {
+                        DispatchQueue.main.async {
+                            self.profileImage.image = UIImage(data: imageData)
+                        }
+                    }
+                }
+            }
+        }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }
