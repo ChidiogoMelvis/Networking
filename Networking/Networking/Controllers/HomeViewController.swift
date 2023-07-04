@@ -7,18 +7,9 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let viewModel = UserViewModel()
-    
-    lazy var searchTextField: UISearchTextField = {
-        let search = UISearchTextField()
-        search.translatesAutoresizingMaskIntoConstraints = false
-        search.delegate = self
-        search.addTarget(self, action: #selector(searchTextChanged), for: .editingChanged)
-        return search
-        
-    }()
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -42,16 +33,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     }
                 }
             }
-    
-    @objc func searchTextChanged() {
-        // Access the current text in the search text field
-        let searchText = searchTextField.text ?? ""
-        
-        // Perform any desired actions based on the search text
-        print("Search text changed: \(searchText)")
-    }
 
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.users.count
     }
@@ -62,15 +44,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func setupViews() {
-        view.addSubview(searchTextField)
         view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
-        searchTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
-        searchTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-        searchTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-        
-        tableView.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 16),
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10)
