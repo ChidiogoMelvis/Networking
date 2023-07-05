@@ -45,6 +45,17 @@ class HomeTableViewCell: UITableViewCell {
         self.addSubview(nameLabel)
         self.addSubview(emailLabel)
         self.addSubview(profileImage)
+        
+        NSLayoutConstraint.activate([
+            nameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            
+            emailLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
+            emailLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            
+            profileImage.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 5),
+            profileImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
+        ])
     }
     
         func configure(with result: Results) {
