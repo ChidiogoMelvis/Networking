@@ -45,24 +45,14 @@ class HomeTableViewCell: UITableViewCell {
         self.addSubview(nameLabel)
         self.addSubview(emailLabel)
         self.addSubview(profileImage)
-        
-//        NSLayoutConstraint.activate([
-//            nameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-//            nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-//
-//            emailLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
-//            emailLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-//
-//            image.topAnchor.
-//        ])
     }
     
-        func configure(with user: User) {
-            nameLabel.text = "\(user.name.first) \(user.name.last)"
-            emailLabel.text = user.email
+        func configure(with result: Results) {
+            nameLabel.text = "\(result.name.first) \(result.name.last)"
+            emailLabel.text = result.email
             
             // Load the profile image asynchronously
-            if let url = URL(string: user.picture.medium) {
+            if let url = URL(string: result.picture.medium) {
                 DispatchQueue.global().async {
                     if let imageData = try? Data(contentsOf: url) {
                         DispatchQueue.main.async {

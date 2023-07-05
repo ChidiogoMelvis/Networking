@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var users: [Results] = []
+    var results: [Results] = []
     let viewModel = UserViewModel()
     
     lazy var tableView: UITableView = {
@@ -36,12 +36,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return results.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
-        let user = users[indexPath.row]
+        let user = results[indexPath.row]
             cell.configure(with: user)
         return cell
     }
