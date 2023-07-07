@@ -7,11 +7,6 @@
 
 import Foundation
 
-//enum NetworkError: Error {
-//    case invalidURL
-//    case emptyResponse
-//}
-
 class NetworkService {
     func getUsers(completion: @escaping (Result<[Results], Error>) -> Void) {
         let url = URL(string: "https://randomuser.me/api/?results=5")!
@@ -22,11 +17,7 @@ class NetworkService {
                     return
                 }
                 
-                guard let data = data else { return
-                    //                let error = NSError(domain: "com.example.networking", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data received"])
-                    //                completion(.failure(error))
-                    //                return
-                }
+                guard let data = data else { return }
                 
                 do {
                     let decoder = JSONDecoder()

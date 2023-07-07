@@ -27,14 +27,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         setupViews()
         view.backgroundColor = .white
         viewModel.getUsers { [weak self] error in
-                    if let error = error {
-                        print("Error fetching users: \(error)")
-                    } else {
-                        DispatchQueue.main.async {
-                            self?.tableView.reloadData()
-                        }
-                    }
+            if let error = error {
+                print("Error fetching users: \(error)")
+            } else {
+                DispatchQueue.main.async {
+                    self?.results = self?.viewModel.users ?? []
+                    self?.tableView.reloadData()
                 }
+            }
+        }
+
             }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

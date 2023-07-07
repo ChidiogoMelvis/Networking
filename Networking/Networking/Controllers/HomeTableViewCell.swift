@@ -62,7 +62,7 @@ class HomeTableViewCell: UITableViewCell {
             nameLabel.text = "\(result.name.first) \(result.name.last)"
             emailLabel.text = result.email
             
-            // Load the profile image asynchronously
+            
             if let url = URL(string: result.picture.medium) {
                 DispatchQueue.global().async {
                     if let imageData = try? Data(contentsOf: url) {
